@@ -5,9 +5,19 @@ let amigos = [];
 
 function pegarValor(){
     let amigo = document.getElementById('amigo').value;
-    return amigo;
     
-     
+
+    if(!amigo){
+        alert('Digite um nome válido');
+        
+    }else{
+        amigos.push(amigo);
+        LerNomes();
+        console.log(amigos);
+        
+    }
+
+    
 
 }
 
@@ -16,17 +26,31 @@ function pegarValor(){
 
 function adicionarAmigo() {
 
-
-        if(!pegarValor()){
-            alert('Digite um nome válido')
-            
-        }else{
-            amigos.push(pegarValor());
-            console.log(amigos);
-
-        }
-        
+        pegarValor();
         limparCampo();
+      
+        
+        
+        
+}
+
+
+function LerNomes() {
+    
+    listaAmigos = document.getElementById('listaAmigos');
+    for(let i = 0; i < amigos.length; i++){
+      var nome = amigos[i]
+        
+    }
+    listaAmigos.innerHTML += nome += ' - ' ;
+}
+
+function LerTabela() {
+     for(let i = 0; i < amigos.length; i++){
+        console.log(amigos[i]);
+        listaAmigos = amigos[i];
+    }
+    return listaAmigos;
 }
 
 function limparCampo() {
@@ -35,7 +59,12 @@ function limparCampo() {
     
 }
 
-adicionarAmigo();
+
+
+
+
+   
+    
 
 
 
