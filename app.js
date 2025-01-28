@@ -12,12 +12,11 @@ function pegarValor(){
         
     }else{
         amigos.push(amigo);
-        LerNomes();
-        console.log(amigos);
+        lerNomes();
         
+       
+            
     }
-
-    
 
 }
 
@@ -27,15 +26,12 @@ function pegarValor(){
 function adicionarAmigo() {
 
         pegarValor();
-        limparCampo();
-      
-        
-        
+        limparCampo();     
         
 }
 
 
-function LerNomes() {
+function lerNomes() {
     
     listaAmigos = document.getElementById('listaAmigos');
     for(let i = 0; i < amigos.length; i++){
@@ -45,13 +41,21 @@ function LerNomes() {
     listaAmigos.innerHTML += nome += ' - ' ;
 }
 
-function LerTabela() {
-     for(let i = 0; i < amigos.length; i++){
-        console.log(amigos[i]);
-        listaAmigos = amigos[i];
+
+
+function sortearAmigo() {
+   
+    let numeroSorteado = parseInt(Math.random() * amigos.length + 1 );
+    console.log(numeroSorteado);
+    for(let i = 0; i < amigos.length; i++){
+    var nomeEscolhido = amigos[numeroSorteado]
+        
     }
-    return listaAmigos;
+    let nomeSorteado = document.getElementById('resultado');
+    nomeSorteado.innerHTML += nomeEscolhido  ;
+       
 }
+
 
 function limparCampo() {
     let campo = document.querySelector('input')
