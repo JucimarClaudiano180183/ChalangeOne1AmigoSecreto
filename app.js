@@ -45,15 +45,18 @@ function lerNomes() {
 
 function sortearAmigo() {
    
-    let numeroSorteado = parseInt(Math.random() * amigos.length + 1 );
-    console.log(numeroSorteado);
+    let numeroSorteado = parseInt(Math.random() * amigos.length + 0 );
+    if(amigos.length == 0){
+        alert('Digite nomes para ser sorteados')
+    }else{
     for(let i = 0; i < amigos.length; i++){
     var nomeEscolhido = amigos[numeroSorteado]
         
     }
     let nomeSorteado = document.getElementById('resultado');
     nomeSorteado.innerHTML += nomeEscolhido  ;
-       
+    }
+    limparCampoResultado();
 }
 
 
@@ -62,6 +65,15 @@ function limparCampo() {
     campo.value = '';
     
 }
+
+
+function limparCampoResultado( ) {
+    let campoResultado = document.getElementById('resultado')
+    campoResultado.value = ' ';
+    
+}
+
+
 
 
 
