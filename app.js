@@ -1,6 +1,8 @@
 // criando a variavel do tipo lista  para armazenar o nome
 
 let amigos = [];
+let listaNomeSorteado = [];
+
 
 
 function pegarValor(){
@@ -12,21 +14,19 @@ function pegarValor(){
         
     }else{
         amigos.push(amigo);
-        lerNomes();
-        
-       
+        lerNomes();  
             
     }
 
 }
-
 
 //atribuir ação para o botão adcionar
 
 function adicionarAmigo() {
 
         pegarValor();
-        limparCampo();     
+        limparCampo();  
+        
         
 }
 
@@ -44,19 +44,28 @@ function lerNomes() {
 
 
 function sortearAmigo() {
-   
+    
     let numeroSorteado = parseInt(Math.random() * amigos.length + 0 );
+   
     if(amigos.length == 0){
         alert('Digite nomes para ser sorteados')
-    }else{
+    }
+    else{
     for(let i = 0; i < amigos.length; i++){
-    var nomeEscolhido = amigos[numeroSorteado]
-        
+        if(listaNomeSorteado.includes(numeroSorteado)){
+            return sortearAmigo();
+        }
+    var nomeEscolhido = amigos[numeroSorteado] 
+    
     }
+    listaNomeSorteado.push(numeroSorteado); 
+    console.log(numeroSorteado);
     let nomeSorteado = document.getElementById('resultado');
-    nomeSorteado.innerHTML += nomeEscolhido  ;
+    nomeSorteado.innerHTML += nomeEscolhido += '-';
+    ValidarNomeSorteado()
+        
+       
     }
-    limparCampoResultado();
 }
 
 
@@ -66,13 +75,20 @@ function limparCampo() {
     
 }
 
-
-function limparCampoResultado( ) {
-    let campoResultado = document.getElementById('resultado')
-    campoResultado.value = ' ';
-    
+function ValidarNomeSorteado() {
+    if(listaNomeSorteado.length == amigos.length){
+        listaNomeSorteado = [];
+        limparListaNomeSorteado();
+        
+    } 
 }
 
+
+function limparListaNomeSorteado() {
+    let lista = document.getElementById('resultado');
+        lista.innerHTML = "";
+    
+}
 
 
 
