@@ -59,7 +59,6 @@ function sortearAmigo() {
     
     }
     listaNomeSorteado.push(numeroSorteado); 
-    console.log(numeroSorteado);
     let nomeSorteado = document.getElementById('resultado');
     nomeSorteado.innerHTML += nomeEscolhido += '-';
     ValidarNomeSorteado()
